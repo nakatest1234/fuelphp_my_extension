@@ -1,0 +1,91 @@
+{
+	"name": "fuel/fuel",
+	"type": "metapackage",
+	"description": "The FuelPHP framework",
+	"keywords": ["framework"],
+	"homepage": "http://fuelphp.com",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "FuelPHP Development Team",
+			"email": "team@fuelphp.com"
+		}
+	],
+	"support": {
+		"irc": "irc://irc.freenode.org/fuelphp",
+		"forum": "http://fuelphp.com/forums"
+	},
+	"require": {
+		"php": ">=5.3.3",
+		"monolog/monolog": "1.5.*",
+		"fuelphp/upload": "dev-master"
+		,"fuel/oil": "1.6"
+		,"fuel/email": "1.7"
+		,"fuel/core": "1.6"
+	},
+	"suggest": {
+		"mustache/mustache": "Allow Mustache templating with the Parser package",
+		"smarty/smarty": "Allow Smarty templating with the Parser package",
+		"twig/twig": "Allow Twig templating with the Parser package",
+		"mthaml/mthaml": "Allow Haml templating with Twig supports with the Parser package"
+	},
+	"repositories": [
+		{
+			"type": "package",
+			"package": {
+				"name": "fuel/oil",
+				"type": "fuel-package",
+				"version": "1.6",
+				"require": {
+					"composer/installers":"*"
+				},
+				"source": {
+					"url": "https://github.com/fuel/oil.git",
+					"type": "git",
+					"reference": "origin/1.6/master"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "fuel/email",
+				"type": "fuel-package",
+				"version": "1.7",
+				"require": {
+					"composer/installers":"*"
+				},
+				"source": {
+					"url": "https://github.com/fuel/email.git",
+					"type": "git",
+					"reference": "origin/1.7/master"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "fuel/core",
+				"type": "fuel-package",
+				"version": "1.6",
+				"require": {
+					"composer/installers":"*"
+				},
+				"source": {
+					"url": "https://github.com/fuel/core.git",
+					"type": "git",
+					"reference": "origin/1.6/master"
+				}
+			}
+		}
+	],
+	"minimum-stability": "dev",
+	"config": {
+		"vendor-dir": "fuel/vendor"
+	},
+	"extra": {
+		"installer-paths": {
+			"fuel/core/": ["fuel/core"]
+		}
+	}
+}
